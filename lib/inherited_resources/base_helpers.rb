@@ -234,7 +234,7 @@ module InheritedResources
         # with Draper's decorates_assigned convention, but it doesn't work,
         # resource keeps getting reset, but it works fine with @resource
         #
-        instance_variable_set('@resource', resource.try(:decorate))
+        instance_variable_set('@resource', resource.try(:decorate) rescue resource)
         instance_variable_set("@#{resource_instance_name}", resource)
       end
 
