@@ -229,6 +229,12 @@ module InheritedResources
       # Set resource ivar based on the current resource controller.
       #
       def set_resource_ivar(resource) #:nodoc:
+        # decorate the resource
+        # decorating resource would have been preferrable to be consistent
+        # with Draper's decorates_assigned convention, but it doesn't work,
+        # resource keeps getting reset, but it works fine with @resource
+        #
+        instance_variable_set('@resource', resource.decorate)
         instance_variable_set("@#{resource_instance_name}", resource)
       end
 
