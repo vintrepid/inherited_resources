@@ -9,10 +9,10 @@ module InheritedResources
     alias :index! :index
 
     # GET /resources/1
-    def show(options={}, &block)
-      respond_with(*with_chain(resource), options, &block)
-    end
-    alias :show! :show
+    # def show(options={}, &block)
+    #   respond_with(*with_chain(resource), options, &block)
+    # end
+    # alias :show! :show
 
     # GET /resources/new
     def new(options={}, &block)
